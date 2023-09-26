@@ -15,7 +15,8 @@
 
 <div class="main-content">
   <div class="exercise" th:each="exercise : ${exercises}">
-    <p class="exercise-nick" th:text="${exercise.nick}"></p>
+
+    <p class="exercise-name" th:text="${exercise.name}"></p>
     <p class="exercise-bookName" th:text="${exercise.bookName}"></p>
     <p class="exercise-chapter" th:text="${exercise.chapter}"></p>
     <p class="exercise-exerciseNumber" th:text="${exercise.exerciseNumber}"></p>
@@ -29,7 +30,8 @@
 
 <div class="comment-section">
   <div class="comment" th:each="comment : ${comment}">
-    <p class="comment-commentator" th:text="${comment.commentator}"></p>
+
+    <p class="comment-name" th:text="${comment.name}"></p>
     <p class="comment-content" th:text="${comment.content}"></p>
 
 
@@ -42,6 +44,6 @@
 
 
 
-<!-- Twój kod JavaScript można umieścić tutaj, aby obsłużyć działanie przycisków -->
+
 </body>
 </html>

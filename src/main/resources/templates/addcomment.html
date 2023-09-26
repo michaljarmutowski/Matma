@@ -9,12 +9,14 @@
 <body>
 <h1>Zostaw komentarz</h1>
 
-<form th:action="@{/addcomment}" method="post">
+<form th:action="@{/addcomment}" method="post" th:object="${comment}">
     <label for="commentator">Twoj Nick:</label>
-    <input type="text" id="commentator" name="commentator" required><br>
+    <input type="text" id="commentator" name="commentator" th:field="*{name}" required>
+    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="error"></span><br>
 
     <label for="content">Komentarz:</label>
-    <textarea id="content" name="content" rows="4" cols="50" required></textarea><br>
+    <textarea id="content" name="content" th:field="*{content}" rows="4" cols="50" required></textarea>
+    <span th:if="${#fields.hasErrors('content')}" th:errors="*{content}" class="error"></span><br>
 
     <input type="submit" value="Dodaj">
 </form>

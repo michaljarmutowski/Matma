@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formularz</title>
+    <link rel="stylesheet" type="text/css" href="/css/submit.css">
+</head>
+<body>
+<h1>Formularz rejestracji</h1>
+<div class="form-container">
+    <form th:action="@{/submit}" method="post">
+        <label for="name">Nick:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">E-mail:</label>
+        <input type="text" id="email" name="email" required>
+
+        <input type="submit" value="Zarejestruj">
+    </form>
+</div>
+</body>
+</html>

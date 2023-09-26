@@ -9,22 +9,26 @@
 <body>
 <h1>Wprowadź dane:</h1>
 
-<form th:action="@{/addexercise}" method="post">
+<form th:action="@{/addexercise}" method="post" th:object="${exercise}" >
 
-  <label for="nick">Nick:</label>
-  <input type="text" id="nick" name="nick" required><br>
+
+
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" th:field="*{name}" required>
+  <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="error"></span><br>
 
   <label for="bookName">Tytul Ksiazki:</label>
-  <select id="bookName" name="bookName" required>
+  <select id="bookName" name="bookName" th:field="*{bookName}" required>
     <option value="">Choose Book Title</option>
     <option value="Zbiór zadań maturalnych poziom podstawowy (Ryszard Pagacz)">Zbiór zadań maturalnych poziom podstawowy (Ryszard Pagacz)</option>
     <option value="Zbiór zadań maturalnych poziom rozszerzony (Ryszard Pagacz)">Zbiór zadań maturalnych poziom rozszerzony (Ryszard Pagacz)</option>
     <option value="Matematyka Zbiór zadań do liceów i techników (Marcin Kurczab)">Matematyka Zbiór zadań do liceów i techników (Marcin Kurczab)</option>
   </select><br>
+  <span th:if="${#fields.hasErrors('bookName')}" th:errors="*{bookName}" class="error"></span><br>
 
 
   <label for="chapter">Wybierz Rozdzial:</label>
-  <select id="chapter" name="chapter" required>
+  <select id="chapter" name="chapter" th:field="*{chapter}" required>
     <option value="">Choose Chapter</option>
     <option value="Liczby i potęgi">Liczby i potęgi</option>
     <option value="Logarytmy">Logarytmy</option>
@@ -47,15 +51,19 @@
     <option value="Dowody_(algebra)">Dowody (algebra)</option>
 
   </select><br>
+  <span th:if="${#fields.hasErrors('chapter')}" th:errors="*{chapter}" class="error"></span><br>
 
   <label for="exerciseNumber">Numer zadania:</label>
-  <input type="text" id="exerciseNumber" name="exerciseNumber" required><br>
+  <input type="text" id="exerciseNumber" name="exerciseNumber" th:field="*{exerciseNumber}" required>
+  <span th:if="${#fields.hasErrors('exerciseNumber')}" th:errors="*{exerciseNumber}" class="error"></span><br>
 
   <label for="contentImgUrl">URL obrazu z treścią:</label>
-  <input type="url" id="contentImgUrl" name="contentImgUrl" required><br>
+  <input type="url" id="contentImgUrl" name="contentImgUrl" th:field="*{contentImgUrl}" required>
+  <span th:if="${#fields.hasErrors('contentImgUrl')}" th:errors="*{contentImgUrl}" class="error"></span><br>
 
   <label for="solutionImgUrl">URL obrazu z rozwiązaniem:</label>
-  <input type="url" id="solutionImgUrl" name="solutionImgUrl" required><br>
+  <input type="url" id="solutionImgUrl" name="solutionImgUrl" th:field="*{solutionImgUrl}" required>
+  <span th:if="${#fields.hasErrors('solutionImgUrl')}" th:errors="*{solutionImgUrl}" class="error"></span><br>
 
   <input type="submit" value="Wyślij">
 </form>

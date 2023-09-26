@@ -13,7 +13,7 @@
 
 <div class="main-blog">
     <div class="blog" th:each="blog : ${blogs}">
-        <p class="blog-nick" th:text="${blog.nick}"></p>
+        <p class="blog-nick" th:text="${blog.name}"></p>
         <p class="blog-post" th:text="${blog.post}"></p>
 
 
@@ -23,6 +23,6 @@
 
 </div>
 
-<!-- Twój kod JavaScript można umieścić tutaj, aby obsłużyć działanie przycisków -->
+
 </body>
 </html>

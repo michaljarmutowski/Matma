@@ -2,8 +2,11 @@ package com.Matematyka.Matma.Contoller;
 
 import com.Matematyka.Matma.model.Exercises;
 import com.Matematyka.Matma.repository.ExercisesRepository;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,13 +23,19 @@ public class AddExerciseController {
     }
 
     @GetMapping
-    public String addExercisePage(){
+    public String addExercisePage(Model model){
+        model.addAttribute("exercise", new Exercises());
         return "addexercise";
     }
 
     @PostMapping
-    public String addExercise(Exercises exercises){
+    public String addExercise(@Valid Exercises exercises, BindingResult bindingResult){
+        if (bindingResult.hasErrors()) {
+            return "addexercise";
+        }
         exercisesRepository.save(exercises);
         return "redirect:/home";
     }
+
+
 }

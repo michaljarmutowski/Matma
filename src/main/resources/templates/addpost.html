@@ -9,13 +9,15 @@
 <body>
 <h1>Dodaj post</h1>
 
-<form th:action="@{/addpost}" method="post">
+<form th:action="@{/addpost}" method="post" th:object="${blog}">
 
-    <label for="nick">Nick:</label>
-    <input type="text" id="nick" name="nick" required><br>
 
+    <label for="name">Nick:</label>
+    <input type="text" id="name" name="name" th:field="*{name}" required>
+    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="error"></span><br>
     <label for="post">Tresc:</label>
-    <textarea id="post" name="post" rows="4" cols="50" required></textarea><br>
+    <textarea id="post" name="post" rows="4" cols="50" th:field="*{post}" required></textarea>
+    <span th:if="${#fields.hasErrors('post')}" th:errors="*{post}"></span><br>
 
     <input type="submit" value="Dodaj">
 </form>

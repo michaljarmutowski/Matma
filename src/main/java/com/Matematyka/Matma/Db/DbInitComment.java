@@ -1,7 +1,6 @@
 package com.Matematyka.Matma.Db;
 
 import com.Matematyka.Matma.repository.CommentRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 
 import java.util.List;
