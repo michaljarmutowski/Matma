@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOG</title>
+    <link rel="stylesheet" type="text/css" href="/css/stylehome.css">
+</head>
+<body>
+<h1>Witaj na mojej stronie!</h1>
+
+<a href="http://localhost:8080/addpost"><button type="button" id="dodajPost">Dodaj post</button></a>
+
+<div class="main-blog">
+    <div class="blog" th:each="blog : ${blogs}">
+        <p class="blog-nick" th:text="${blog.nick}"></p>
+        <p class="blog-post" th:text="${blog.post}"></p>
+
+
+
+
+    </div>
+
+</div>
+
+<!-- Twój kod JavaScript można umieścić tutaj, aby obsłużyć działanie przycisków -->
+</body>
+</html>

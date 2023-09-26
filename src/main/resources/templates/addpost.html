@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DODAJ POST</title>
+    <link rel="stylesheet" type="text/css" href="/css/styleaddcomment.css">
+</head>
+<body>
+<h1>Dodaj post</h1>
+
+<form th:action="@{/addpost}" method="post">
+
+    <label for="nick">Nick:</label>
+    <input type="text" id="nick" name="nick" required><br>
+
+    <label for="post">Tresc:</label>
+    <textarea id="post" name="post" rows="4" cols="50" required></textarea><br>
+
+    <input type="submit" value="Dodaj">
+</form>
+</body>
+</html>

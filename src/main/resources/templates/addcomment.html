@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DODAJ KOMENTARZ</title>
+    <link rel="stylesheet" type="text/css" href="/css/styleaddcomment.css">
+</head>
+<body>
+<h1>Zostaw komentarz</h1>
+
+<form th:action="@{/addcomment}" method="post">
+    <label for="commentator">Twoj Nick:</label>
+    <input type="text" id="commentator" name="commentator" required><br>
+
+    <label for="content">Komentarz:</label>
+    <textarea id="content" name="content" rows="4" cols="50" required></textarea><br>
+
+    <input type="submit" value="Dodaj">
+</form>
+</body>
+</html>

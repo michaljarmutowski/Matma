@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DODAJ ZADANIE</title>
+  <link rel="stylesheet" type="text/css" href="/css/styleaddexercise.css">
+</head>
+<body>
+<h1>Wprowadź dane:</h1>
+
+<form th:action="@{/addexercise}" method="post">
+
+  <label for="nick">Nick:</label>
+  <input type="text" id="nick" name="nick" required><br>
+
+  <label for="bookName">Tytul Ksiazki:</label>
+  <select id="bookName" name="bookName" required>
+    <option value="">Choose Book Title</option>
+    <option value="Zbiór zadań maturalnych poziom podstawowy (Ryszard Pagacz)">Zbiór zadań maturalnych poziom podstawowy (Ryszard Pagacz)</option>
+    <option value="Zbiór zadań maturalnych poziom rozszerzony (Ryszard Pagacz)">Zbiór zadań maturalnych poziom rozszerzony (Ryszard Pagacz)</option>
+    <option value="Matematyka Zbiór zadań do liceów i techników (Marcin Kurczab)">Matematyka Zbiór zadań do liceów i techników (Marcin Kurczab)</option>
+  </select><br>
+
+
+  <label for="chapter">Wybierz Rozdzial:</label>
+  <select id="chapter" name="chapter" required>
+    <option value="">Choose Chapter</option>
+    <option value="Liczby i potęgi">Liczby i potęgi</option>
+    <option value="Logarytmy">Logarytmy</option>
+    <option value="Procenty">Procenty</option>
+    <option value="Wartosc bezwzgledna">Wartosc bezwzgledna</option>
+    <option value="Rownania">Rownania</option>
+    <option value="Nierownosci">Nierownosci</option>
+    <option value="Funkcja_liniowa">Funkcja liniowa</option>
+    <option value="Funkcja_kwadratowa">Funkcja kwadratowa</option>
+    <option value="Wyrazenia_algebraiczne">Wyrazenia algebraiczne</option>
+    <option value="Trygonometria">Trygonometria</option>
+    <option value="Ciagi">Ciagi</option>
+    <option value="Planimetria">Planimetria</option>
+    <option value="Stereometria">Stereometria</option>
+    <option value="Statystyka">Statystyka</option>
+    <option value="Kombinatoryka">Kombinatoryka</option>
+    <option value="Rachunek_prawdopodobienstwa">Rachunek prawdopodobienstwa</option>
+    <option value="Geometria_analityczna">Geometria analityczna</option>
+    <option value="Dowody_(geometria)">Dowody (geometria)</option>
+    <option value="Dowody_(algebra)">Dowody (algebra)</option>
+
+  </select><br>
+
+  <label for="exerciseNumber">Numer zadania:</label>
+  <input type="text" id="exerciseNumber" name="exerciseNumber" required><br>
+
+  <label for="contentImgUrl">URL obrazu z treścią:</label>
+  <input type="url" id="contentImgUrl" name="contentImgUrl" required><br>
+
+  <label for="solutionImgUrl">URL obrazu z rozwiązaniem:</label>
+  <input type="url" id="solutionImgUrl" name="solutionImgUrl" required><br>
+
+  <input type="submit" value="Wyślij">
+</form>
+</body>
+</html>
