@@ -29,7 +29,7 @@ public class Exercises {
     private String chapter;
 
     @NotBlank(message = "Pole Numer Zadania nie może być puste")
-    private String exerciseNumber;
+    private Integer exerciseNumber;
 
     @URL(message = "URL obrazu z treścią jest nieprawidłowy")
     private String contentImgUrl;
@@ -41,7 +41,7 @@ public class Exercises {
     @JoinColumn(name = "user_id")
     private User user;
 
-    public Exercises(String bookName, String chapter, String exerciseNumber, String contentImgUrl, String solutionImgUrl) {
+    public Exercises(String bookName, String chapter, Integer exerciseNumber, String contentImgUrl, String solutionImgUrl) {
 
         this.bookName = bookName;
         this.chapter = chapter;

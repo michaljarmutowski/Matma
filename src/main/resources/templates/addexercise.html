@@ -54,7 +54,7 @@
   <span th:if="${#fields.hasErrors('chapter')}" th:errors="*{chapter}" class="error"></span><br>
 
   <label for="exerciseNumber">Numer zadania:</label>
-  <input type="text" id="exerciseNumber" name="exerciseNumber" th:field="*{exerciseNumber}" required>
+  <input type="number" id="exerciseNumber" name="exerciseNumber" th:field="*{exerciseNumber}" required>
   <span th:if="${#fields.hasErrors('exerciseNumber')}" th:errors="*{exerciseNumber}" class="error"></span><br>
 
   <label for="contentImgUrl">URL obrazu z treścią:</label>
